@@ -41,7 +41,7 @@ id workspace = [LSApplication bql_invokeMethod:@"defaultWorkspace"];
 ```
 id LSApplication = NSClassFromString(@"LSApplicationRestrictionsManager");
 id shared = [LSApplication bql_invokeMethod:@"sharedInstance"];
-[shared bql_invoke:@"setWhitelistedBundleIDs:" arguments:@[@"com.biqinglin.ivideo://"]];
+[shared bql_invoke:@"setWhitelistedBundleIDs:" arguments:@[@"com.biqinglin.ivideo"]];
 
 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"com.biqinglin.ivideo://"] options:@{} completionHandler:^(BOOL success) {
     // 如果!success就重新注册一下，不过我测试发现注册一次，所有app都能通过该函数唤起scheme打开
